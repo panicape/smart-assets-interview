@@ -24,8 +24,8 @@ public class BrandEntity {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "BRAND_ID")
-    private Integer brandId;
+    @Column(name = "ID")
+    private Integer id;
 
     /**
      * brand name
@@ -83,13 +83,13 @@ public class BrandEntity {
     /**
      * constructor
      *
-     * @param brandId
+     * @param id
      * @param name
      * @param dateCreate
      * @param dateUpdate
      */
-    public BrandEntity(Integer brandId, String name, String dateCreate, String dateUpdate) {
-        this.brandId = brandId;
+    public BrandEntity(Integer id, String name, String dateCreate, String dateUpdate) {
+        this.id = id;
         this.name = name;
         this.dateCreate = dateCreate;
         this.dateUpdate = dateUpdate;

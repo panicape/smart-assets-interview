@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+
 /**
  * The creative entity
  *
@@ -19,7 +20,7 @@ public class CreativeEntity {
     /** The id */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ID", nullable = false)
+    @Column(name = "C1_ID", nullable = false)
     private Integer id;
 
     /**  the name */
@@ -34,6 +35,11 @@ public class CreativeEntity {
     @Column(name = "DATE_UPDATE")
     private String dateUpdate;
 
+    /** the brand relation */
+    @ManyToOne
+    @JoinColumn(name = "C1_BRAND_ID")
+    private BrandEntity brand;
+
 
     // Constructor
 
@@ -44,31 +50,21 @@ public class CreativeEntity {
     }
 
     /**
-     * Constructor
      *
-     * @param id
-     * @param name
-     * @param dateCreate
-     * @param dateUpdate
+     * @param id the id
+     * @param name the name
+     * @param dateCreate the dateCreate
+     * @param dateUpdate the dateUpdate
+     * @param id the brandId
+     * @param brand the brand
      */
-    public CreativeEntity(Integer id, String name, String dateCreate, String dateUpdate) {
+    public CreativeEntity(Integer id, String name, String dateCreate, String dateUpdate,
+                          BrandEntity brand) {
         this.id = id;
         this.name = name;
         this.dateCreate = dateCreate;
         this.dateUpdate = dateUpdate;
-    }
-
-    /**
-     * Constructor
-     *
-     * @param name
-     * @param dateCreate
-     * @param dateUpdate
-     */
-    public CreativeEntity(String name, String dateCreate, String dateUpdate) {
-        this.name = name;
-        this.dateCreate = dateCreate;
-        this.dateUpdate = dateUpdate;
+        this.brand = brand;
     }
 
 }

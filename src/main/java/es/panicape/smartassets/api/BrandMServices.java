@@ -50,7 +50,7 @@ public class BrandMServices {
      * @return
      */
     @GetMapping("/brands_list")
-    public List<BrandEntity> findAllBrands() {
+    public Iterable<BrandEntity> findAllBrands() {
         return brandRepo.findAll();
     }
 
@@ -60,8 +60,8 @@ public class BrandMServices {
      * @return the brand element
      */
     @GetMapping("/brand/{id}")
-    public List<BrandEntity> findBrandById(@PathVariable Integer id) {
-        return brandRepo.findAll();
+    public Optional<BrandEntity> findBrandById(@PathVariable Integer id) {
+        return brandRepo.findById(id);
     }
 
     /**
@@ -90,7 +90,7 @@ public class BrandMServices {
      */
     @GetMapping("/campaign_list/brand/{id}")
     public Iterable<CreativeEntity> allCreativesByBrandId(@PathVariable Integer brandId) {
-        return iCreativeRepo.findAll();
+        return iCreativeRepo.findCreativeByBrandId(brandId);
     }
 
     /**

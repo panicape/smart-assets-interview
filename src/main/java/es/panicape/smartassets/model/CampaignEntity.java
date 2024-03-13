@@ -1,9 +1,6 @@
 package es.panicape.smartassets.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,12 +13,12 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "CAMPAING")
+@Table(name = "CAMPAIGN")
 public class CampaignEntity {
 
     /** campaign id */
     @Id
-    @Column(name = "ID")
+    @Column(name = "C2_ID")
     private Integer id;
 
     /** campaign name */
@@ -35,6 +32,11 @@ public class CampaignEntity {
     /** the dateUpdate */
     @Column(name = "DATE_UPDATE")
     private String dateUpdate;
+
+    /** the brand relation */
+    @ManyToOne
+    @JoinColumn(name = "C2_BRAND_ID")
+    private BrandEntity brand;
 
 
     // Constructor

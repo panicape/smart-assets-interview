@@ -1,7 +1,7 @@
 package es.panicape.smartassets.persistence;
 
 import es.panicape.smartassets.model.CreativeEntity;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
  * @version 1.0 March 2024
  */
 @Repository
-public interface ICreativeRepository extends CrudRepository<CreativeEntity, Integer> {
+public interface ICreativeRepository extends JpaRepository<CreativeEntity, Integer> {
 
     /**
      * find Creative By Brand Id

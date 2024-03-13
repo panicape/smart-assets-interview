@@ -1,7 +1,7 @@
 package es.panicape.smartassets.persistence;
 
 import es.panicape.smartassets.model.CampaignEntity;
-import org.springframework.data.repository.*;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
  * @version 1.0 March 2024
  */
 @Repository
-public interface ICampaignRepository extends CrudRepository<CampaignEntity, Integer> {
+public interface ICampaignRepository extends JpaRepository<CampaignEntity, Integer> {
 
     /**
      * Method to get campaigns by brand id
