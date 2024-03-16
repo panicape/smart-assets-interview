@@ -5,6 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
+ * Repository to handle brand data
+ *
  * @author Paulo Carrillo
  * @version 1.01 March 2024
  */

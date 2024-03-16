@@ -122,7 +122,7 @@ public class BrandMServices {
      */
     @GetMapping("/campaign/brand/{id}")
     public Iterable<CampaignEntity> findCampaignByBrandId(@PathVariable Integer id) {
-        return campaignRepo.findAll();
+        return campaignRepo.findCampaignByBrandId(id);
     }
 
 }
